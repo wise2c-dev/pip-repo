@@ -1,0 +1,12 @@
+sudo: required
+
+services:
+- docker
+
+before_install:
+- VERSION=v0.1.0
+
+script:
+- docker build -t wisecloud/pip-repo:${VERSION} .
+- docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+- docker push wisecloud/pip-repo:${VERSION}
