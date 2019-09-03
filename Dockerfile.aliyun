@@ -9,7 +9,7 @@ COPY pip.conf /root/.pip
 
 RUN mkdir -p /package \
  && pip install --upgrade pip \
- && pip download -d /packages yq
+ && pip download -d /packages pip yq
 
 # Main
 FROM pypiserver/pypiserver:v1.3.0
